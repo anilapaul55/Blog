@@ -62,7 +62,7 @@
 							<div class="card forgot-box">
 								<div class="card-body">
 									<div class="text-center py-4 login-customer-logo"></div>
-									<div class="p-4 rounded border" style="background-color:#c8def7">
+									<div class="p-4 rounded border">
 										@if ($message = Session::get('login'))
                                             <div class="alert alert-warning" role="alert">
                                                 {{ $message }}
