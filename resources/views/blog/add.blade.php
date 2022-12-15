@@ -48,7 +48,7 @@
                         <h5 class="mb-0 text-dark">Add Blog</h5>
                     </div>
                     <hr>
-                    <form class="row g-3" action="{{route('store')}}" method="post" onsubmit="return validate();" id="blog_form" enctype="multipart/form-data">
+                    <form class="row g-3" action="{{route('store')}}" method="post" id="blog_form" enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-6">
                             <label for="inputTitle" class="form-label"> Title *</label>
@@ -98,40 +98,27 @@
 @endsection
 @section('scripts')
 <script>
-  $(document).ready(function () {
-   $('#image-uploadify').imageuploadify();
-})
-</script>
-<script>
     $(document).ready(function () {
-            $('form[id="blog_form"]').validate({
+        $('form[id="blog_form"]').validate({
             rules: {
                 inputTitle: {
                     required: true,
                     minlength:3,
                     maxlength:50,
                     letterandnumber:true,
-                  },
+                },
                 inputSubTitle: {
                     required: true,
                     minlength: 3,
                     maxlength:50,
                     letterandnumber:true,
                     no_space:true,
-                    
-                },
-                inputimage: {
-                    required: true,
-                    imageformat:true,
-                    
                 },
                 inputDescription: {
                     required: true,
                     minlength:5,
-                    maxlength:255,
                 },
             },
-
             onfocusout: function(element) {
                 this.element(element);
                 $('#inputbut').prop('disabled',false);

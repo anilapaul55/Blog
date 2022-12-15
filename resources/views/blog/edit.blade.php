@@ -122,7 +122,6 @@
                 inputDescription: {
                     required: true,
                     minlength:5,
-                    maxlength:255,
                 },
             },
 
